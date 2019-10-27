@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const API_KEY = '32607b235b42290996beb502863409b6';
+
 const api = axios.create({
 	baseURL: 'https://api.themoviedb.org/3/',
 	params: {
@@ -9,9 +11,15 @@ const api = axios.create({
 });
 
 export const moviesApi = {
-	nowPlaying: () => api.get('movie/now_playing'),
-	upcoming: () => api.get('movie/upcoming'),
-	popular: () => api.get('movie/popular'),
+	nowPlaying: () =>
+		api.get(`movie/now_playing`, {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
+	upcoming: () => api.get(`movie/upcoming?api_key=${API_KEY}`),
+	popular: () => api.get(`movie/popular?api_key=${API_KEY}`),
 	movieDetail: id =>
 		api.get(`movie/${id}`, {
 			params: {
