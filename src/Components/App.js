@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Router from './Router';
+import Header from './Header';
 
-function App() {
-	return <div> Hello</div>;
+class App extends Component {
+	render() {
+		return (
+			<>
+				<Header />
+				<Router />
+			</>
+		);
+	}
 }
 
 export default App;
