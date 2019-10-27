@@ -5,7 +5,7 @@ const API_KEY = '32607b235b42290996beb502863409b6';
 const api = axios.create({
 	baseURL: 'https://api.themoviedb.org/3/',
 	params: {
-		api_key: '32607b235b42290996beb502863409b6',
+		api_key: API_KEY,
 		language: 'en-US'
 	}
 });
@@ -41,7 +41,8 @@ export const moviesApi = {
 	search: term =>
 		api.get('search/movie', {
 			params: {
-				query: encodeURIComponent(term)
+				query: encodeURIComponent(term),
+				api_key: API_KEY
 			}
 		})
 };
@@ -77,7 +78,8 @@ export const tvApi = {
 	search: term =>
 		api.get(`search/tv`, {
 			params: {
-				query: encodeURIComponent(term)
+				query: encodeURIComponent(term),
+				api_key: API_KEY
 			}
 		})
 };
