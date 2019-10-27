@@ -18,8 +18,20 @@ export const moviesApi = {
 				language: 'en-US'
 			}
 		}),
-	upcoming: () => api.get(`movie/upcoming?api_key=${API_KEY}`),
-	popular: () => api.get(`movie/popular?api_key=${API_KEY}`),
+	upcoming: () =>
+		api.get(`movie/upcoming`, {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
+	popular: () =>
+		api.get(`movie/popular`, {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
 	movieDetail: id =>
 		api.get(`movie/${id}`, {
 			params: {
@@ -35,9 +47,27 @@ export const moviesApi = {
 };
 
 export const tvApi = {
-	topRated: () => api.get('tv/top_rated'),
-	popular: () => api.get('tv/popular'),
-	airingToday: () => api.get('tv/airing_today'),
+	topRated: () =>
+		api.get('tv/top_rated', {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
+	popular: () =>
+		api.get('tv/popular', {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
+	airingToday: () =>
+		api.get('tv/airing_today', {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		}),
 	showDetail: id =>
 		api.get(`tv/${id}`, {
 			params: {
