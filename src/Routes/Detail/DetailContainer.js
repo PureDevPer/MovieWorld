@@ -18,23 +18,21 @@ class DetailContainer extends Component {
 	async componentDidMount() {
 		const {
 			match: {
-				params: { id },
-				history: { push }
-			}
+				params: { id }
+			},
+			history: { push }
 		} = this.props;
 		const { isMovie } = this.state;
 		const parsedId = parseInt(id);
-		if (isNaN(parsedId)) return push('/');
-
+		if (isNaN(parsedId)) {
+			return push('/');
+		}
 		let result = null;
-
 		try {
 			if (isMovie) {
 				({ data: result } = await moviesApi.movieDetail(parsedId));
-				//result = request.data;
 			} else {
 				({ data: result } = await tvApi.showDetail(parsedId));
-				//result = request.data;
 			}
 		} catch {
 			this.setState({ error: "Can't find anything." });
