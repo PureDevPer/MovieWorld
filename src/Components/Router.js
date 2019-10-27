@@ -6,8 +6,8 @@ import {
 	Redirect
 } from 'react-router-dom';
 import Home from '../Routes/Home';
-import Search from '../Routes/Search';
-import TV from '../Routes/TV';
+import Search from '../Routes/Search/SearchPresenter';
+import TV from '../Routes/TV/TV';
 import Header from './Header';
 
 export default () => (
