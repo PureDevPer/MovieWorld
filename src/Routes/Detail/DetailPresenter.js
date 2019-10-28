@@ -46,18 +46,9 @@ const Content = styled.div`
 `;
 
 const Cover = styled.img`
-	/*
-	width: 30%;
-	background-image: url(${props => props.bgImage});
-	background-position: center center;
-	background-size: cover;
-	height: 100%;
-	*/
-
 	display: none;
 	border-radius: 5px;
 	z-index: 0;
-	
 
 	@media only screen and (max-width: 1025px) {
 		display: flex;
