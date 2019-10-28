@@ -25,7 +25,7 @@ const FocusLine = styled.div`
 	background-color: #3498db;
 	height: 3px;
 	position: absolute;
-	top: 45px;
+	top: 40px;
 	left: ${props => `${props.left}px`};
 	transition: left 0.3s ease-in-out;
 `;
