@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import DetailTabHeader from './DetailTabHeader';
-import DetailTabYoutube from './DetailTabYoutube.';
-import DetailTabProduction from './DetailTabProduction';
-import DetailTabCountry from './DetailTabCountry';
-import DetailTabCreatedBy from './DetailTabCreatedBy';
+import DetailHeader from './DetailHeader';
+import DetailYoutube from './DetailYoutube.';
+import DetailProduction from './DetailProduction';
+import DetailCountry from './DetailCountry';
+import DetailCreatedBy from './DetailCreatedBy';
 
 const Container = styled.div`
 	margin: 30px 0;
@@ -15,7 +15,7 @@ const Container = styled.div`
 	border-radius: 10px;
 `;
 
-class DetailTabContainer extends Component {
+class DetailContainer extends Component {
 	state = {
 		selectedButton: null
 	};
@@ -76,7 +76,7 @@ class DetailTabContainer extends Component {
 
 		return (
 			<Container>
-				<DetailTabHeader
+				<DetailHeader
 					isYoutube={isYoutube}
 					isProduction={isProduction}
 					isCountry={isCountry}
@@ -86,23 +86,23 @@ class DetailTabContainer extends Component {
 				/>
 				{/* Youtube */}
 				{selectedButton === 'youtube' && results.length > 0 && (
-					<DetailTabYoutube youtubeID={results[0].key} />
+					<DetailYoutube youtubeID={results[0].key} />
 				)}
 				{/* Companies */}
 				{selectedButton === 'production' && (
-					<DetailTabProduction productionList={production_companies} />
+					<DetailProduction productionList={production_companies} />
 				)}
 				{/* Countries */}
 				{selectedButton === 'country' && (
-					<DetailTabCountry countryList={production_countries} />
+					<DetailCountry countryList={production_countries} />
 				)}
 				{/* CreatedBy */}
 				{selectedButton === 'createdby' && (
-					<DetailTabCreatedBy createdByList={created_by} />
+					<DetailCreatedBy createdByList={created_by} />
 				)}
 			</Container>
 		);
 	}
 }
 
-export default DetailTabContainer;
+export default DetailContainer;

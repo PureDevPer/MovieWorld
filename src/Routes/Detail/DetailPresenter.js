@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import Loader from '../../Components/Loader';
-import DetailTabContainer from '../../Components/DetailTab/DetailTabContainer';
+import DetailContainer from '../../Components/Detail/DetailContainer';
 import Collection from '../../Components/Collection';
 import Season from '../../Components/Season';
 
@@ -35,12 +35,12 @@ const Content = styled.div`
 	position: relative;
 	z-index: 1;
 
-	@media only screen and (max-width: 1024px) {
+	@media only screen and (max-width: 1025px) {
 		flex-direction: column;
 		align-items: center;
 	}
 
-	@media only screen and (min-width: 1024px) {
+	@media only screen and (min-width: 1025px) {
 		flex-direction: row;
 	}
 `;
@@ -59,7 +59,7 @@ const Cover = styled.img`
 	z-index: 0;
 	
 
-	@media only screen and (max-width: 1024px) {
+	@media only screen and (max-width: 1025px) {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
@@ -67,7 +67,7 @@ const Cover = styled.img`
 		max-width: 450px;
 	}
 
-	@media only screen and (min-width: 1024px) {
+	@media only screen and (min-width: 1025px) {
 		display: inline-block;
 		position: sticky;
 		top: 80px;
@@ -76,11 +76,6 @@ const Cover = styled.img`
 `;
 
 const Data = styled.div`
-	/*
-	width: 70%;
-	margin-left: 10px;
-	*/
-
 	max-width: 450px;
 	margin-left: 30px;
 
@@ -214,7 +209,7 @@ const DetailPresenter = ({ result, loading, error, location }) => {
 						</Item>
 					</ItemContainer>
 					<OverView>{result.overview}</OverView>
-					{isTabExist && <DetailTabContainer data={result} />}
+					{isTabExist && <DetailContainer data={result} />}
 					{result.belongs_to_collection && (
 						<>
 							<Link to={`/collection/${result.belongs_to_collection.id}`}>
