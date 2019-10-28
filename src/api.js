@@ -95,5 +95,3 @@ export const collection = {
 			}
 		})
 };
-
-export default api;
