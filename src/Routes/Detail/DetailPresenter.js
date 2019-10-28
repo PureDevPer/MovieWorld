@@ -34,6 +34,15 @@ const Content = styled.div`
 	width: 100%;
 	position: relative;
 	z-index: 1;
+
+	@media only screen and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		flex-direction: row;
+	}
 `;
 
 const Cover = styled.img`
@@ -48,10 +57,11 @@ const Cover = styled.img`
 	display: none;
 	border-radius: 5px;
 	z-index: 0;
-	position: sticky;
+	
 
 	@media only screen and (max-width: 1024px) {
-		display: inline-block;
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 30px;
 		width: 100%;
 		max-width: 450px;
@@ -166,7 +176,6 @@ const DetailPresenter = ({ result, loading, error, location }) => {
 				/>
 				<Data>
 					<Title>
-						{' '}
 						{result.original_title
 							? result.original_title
 							: result.original_name}{' '}
@@ -190,15 +199,17 @@ const DetailPresenter = ({ result, loading, error, location }) => {
 										: `${genre.name} / `
 								)}
 						</Item>
-						<Divider>•</Divider>
 						<Item>
 							{result.imdb_id && result.imdb_id.length > 0 && (
-								<IMDBLink
-									href={'https://www.imdb.com/title/' + result.imdb_id}
-									target="_blank"
-								>
-									<IMDB src={require('../../assets/IMDb.png')} />
-								</IMDBLink>
+								<>
+									<Divider>•</Divider>
+									<IMDBLink
+										href={'https://www.imdb.com/title/' + result.imdb_id}
+										target="_blank"
+									>
+										<IMDB src={require('../../assets/IMDb.png')} />
+									</IMDBLink>
+								</>
 							)}
 						</Item>
 					</ItemContainer>

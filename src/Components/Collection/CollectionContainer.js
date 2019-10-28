@@ -25,7 +25,8 @@ class CollectionContainer extends Component {
 	}
 
 	render() {
-		const { loading, error, collectionList } = this.setState;
+		const { loading, error, collectionList } = this.state;
+
 		return (
 			<CollectionPresenter
 				loading={loading}
