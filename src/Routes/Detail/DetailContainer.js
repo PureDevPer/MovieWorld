@@ -31,8 +31,12 @@ class DetailContainer extends Component {
 		try {
 			if (isMovie) {
 				({ data: result } = await moviesApi.movieDetail(parsedId));
+
+				console.log(result);
 			} else {
 				({ data: result } = await tvApi.showDetail(parsedId));
+
+				console.log(result);
 			}
 		} catch {
 			this.setState({ error: "Can't find anything." });

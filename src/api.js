@@ -86,4 +86,14 @@ export const tvApi = {
 		})
 };
 
+export const collection = {
+	getDetail: id =>
+		api.get(`collection/${id}`, {
+			params: {
+				api_key: API_KEY,
+				language: 'en-US'
+			}
+		})
+};
+
 export default api;
