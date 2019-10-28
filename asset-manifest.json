@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/movieworld/static/js/main.4790eac4.chunk.js",
+    "main.js.map": "/movieworld/static/js/main.4790eac4.chunk.js.map",
+    "runtime-main.js": "/movieworld/static/js/runtime-main.7d0a39ec.js",
+    "runtime-main.js.map": "/movieworld/static/js/runtime-main.7d0a39ec.js.map",
+    "static/js/2.46243a78.chunk.js": "/movieworld/static/js/2.46243a78.chunk.js",
+    "static/js/2.46243a78.chunk.js.map": "/movieworld/static/js/2.46243a78.chunk.js.map",
+    "index.html": "/movieworld/index.html",
+    "precache-manifest.f1bd0a1911ef43d41237d517135fd1c0.js": "/movieworld/precache-manifest.f1bd0a1911ef43d41237d517135fd1c0.js",
+    "service-worker.js": "/movieworld/service-worker.js",
+    "static/media/IMDb.png": "/movieworld/static/media/IMDb.f7f2904f.png",
+    "static/media/no_poster.png": "/movieworld/static/media/no_poster.f17b0a09.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d0a39ec.js",
+    "static/js/2.46243a78.chunk.js",
+    "static/js/main.4790eac4.chunk.js"
+  ]
+}
